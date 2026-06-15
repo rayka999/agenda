@@ -6,11 +6,11 @@ export enum TipoContato {
 }
 
 export class Contato {
-  private nome: string;
-  private telefone: string;
-  private email: string;
-  private aniversario: Date;
-  private tipo: TipoContato;
+  nome: string;
+  telefone: string;
+  email: string;
+  aniversario: Date;
+  tipo: TipoContato;
 
   constructor(
     nome: string,
@@ -25,7 +25,7 @@ export class Contato {
     this.aniversario = aniversario;
     this.tipo = tipo;
   }
-
+  /*
   public getNome(): string {
     return this.nome;
   }
@@ -64,5 +64,5 @@ export class Contato {
 
   public setTipo(tipo: TipoContato): void {
     this.tipo = tipo;
-  }
+  }*/
 }

@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { AdicionaContato } from './adiciona-contato/adiciona-contato';
+import { ExibeContato } from './exibe-contato/exibe-contato';
 
 @Component({
   selector: 'app-root',
-  imports: [AdicionaContato],
+  imports: [AdicionaContato,ExibeContato],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })

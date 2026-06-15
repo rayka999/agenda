@@ -8,6 +8,7 @@ import {
 } from '@angular/forms';
 
 import { Contato, TipoContato } from '../models/contato';
+import { AgendaService } from '../models/agenda-service';
 
 @Component({
   selector: 'app-adiciona-contato',
@@ -16,7 +17,23 @@ import { Contato, TipoContato } from '../models/contato';
   styleUrl: './adiciona-contato.scss'
 })
 export class AdicionaContato {
+  #AgendaService=inject(AgendaService);
 
+  constructor(){
+    this.adicionarContato()
+  }
+
+  adicionarContato(){
+    let contato: Contato ={
+      nome: 'Bruno',
+      telefone: '84999990000',
+      email: 'bruno.gurgel@gmail.com',
+      aniversario: new Date(1982-1-16),
+      tipo: TipoContato.AMIGO,
+    }
+    this.#AgendaService.adicionar(contato)
+  }
+/*
   protected contatos: Contato[] = [];
 
   protected tipos = Object.values(TipoContato);
@@ -58,5 +75,5 @@ export class AdicionaContato {
 
     this.formContato.reset();
   }
-
+*/
 }
