@@ -1,5 +1,4 @@
 import { Component, inject } from '@angular/core';
-import { DatePipe } from '@angular/common';
 import {
   FormBuilder,
   FormGroup,
@@ -12,28 +11,13 @@ import { AgendaService } from '../models/agenda-service';
 
 @Component({
   selector: 'app-adiciona-contato',
-  imports: [ReactiveFormsModule, DatePipe],
+  imports: [ReactiveFormsModule],
   templateUrl: './adiciona-contato.html',
   styleUrl: './adiciona-contato.scss'
 })
 export class AdicionaContato {
   #AgendaService=inject(AgendaService);
 
-  constructor(){
-    this.adicionarContato()
-  }
-
-  adicionarContato(){
-    let contato: Contato ={
-      nome: 'Bruno',
-      telefone: '84999990000',
-      email: 'bruno.gurgel@gmail.com',
-      aniversario: new Date(1982-1-16),
-      tipo: TipoContato.AMIGO,
-    }
-    this.#AgendaService.adicionar(contato)
-  }
-/*
   protected contatos: Contato[] = [];
 
   protected tipos = Object.values(TipoContato);
@@ -54,15 +38,12 @@ export class AdicionaContato {
 
   }
 
-  adicionarContato() {
-
+   adicionarContato(){
     if (this.formContato.invalid) {
       this.formContato.markAllAsTouched();
       return;
     }
-
     const dados = this.formContato.value;
-
     const novoContato = new Contato(
       dados.nome,
       dados.telefone,
@@ -70,10 +51,7 @@ export class AdicionaContato {
       dados.aniversario,
       dados.tipo
     );
-
-    this.contatos.push(novoContato);
-
+    this.#AgendaService.adicionar(novoContato)
     this.formContato.reset();
   }
-*/
 }

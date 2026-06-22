@@ -25,7 +25,6 @@ export class Contato {
     this.aniversario = aniversario;
     this.tipo = tipo;
   }
-  /*
   public getNome(): string {
     return this.nome;
   }
@@ -64,5 +63,5 @@ export class Contato {
 
   public setTipo(tipo: TipoContato): void {
     this.tipo = tipo;
-  }*/
+  }
 }
