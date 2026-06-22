@@ -12,6 +12,7 @@
           <th>E-mail</th>
           <th>Aniversário</th>
           <th>Tipo</th>
+          <th>Ações</th>
         </tr>
       </thead>
 
@@ -23,18 +24,22 @@
             <td>{{ contato.getEmail() }}</td>
             <td>{{ contato.getAniversario() | date:'dd/MM/yyyy'}}</td>
             <td>{{ contato.getTipo() }}</td>
-            <td><button class="" (click)="remover(contato)">Remover</button></td>
+            <td><button class="btn btn-danger" (click)="remover(contato)">Remover</button></td>
           </tr>
         }
       </tbody>
 
     </table>
 
+    <hr>
+
   } @else {
 
     <div class="alert alert-info">
       Nenhum contato cadastrado.
     </div>
+
+    <hr>
 
   }
 </div>
